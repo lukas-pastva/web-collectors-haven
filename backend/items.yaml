@@ -1,0 +1,29 @@
+- name: Sony Walkman
+  model: WM-FX1
+  description: "A classic Sony Walkman with FM/AM radio."
+  bought: "2020-05-10"
+  price: 50
+  year_of_make: 1998
+  images:
+    - "sony-walkman-main.jpg"
+    - "sony-walkman-alt1.jpg"
+
+- name: Vintage Book
+  model: "First Edition"
+  description: "A well-preserved first edition hardcover from 1950."
+  bought: "2019-09-14"
+  price: 120
+  year_of_make: 1950
+  images:
+    - "vintage-book-main.jpg"
+
+- name: Arcade Joystick
+  model: "Arc-Stick 2000"
+  description: "Retro arcade joystick for classic gaming."
+  bought: "2021-12-01"
+  price: 80
+  year_of_make: 2001
+  images:
+    - "arcade-joystick-main.jpg"
+    - "arcade-joystick-alt1.jpg"
+    - "arcade-joystick-alt2.jpg"

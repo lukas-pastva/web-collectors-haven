@@ -1,0 +1,15 @@
+{
+    "name": "collectors-haven-backend",
+    "version": "1.0.0",
+    "description": "Backend for Collector's Haven",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "yamljs": "^0.3.0",
+      "cors": "^2.8.5"
+    }
+  }
+  
