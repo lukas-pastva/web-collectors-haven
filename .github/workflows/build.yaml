@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+
+      - name: build
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          docker login registry.hub.docker.com -u "${{ secrets.DOCKER_HUB_USERNAME }}" -p "${{ secrets.DOCKER_HUB_PASSWORD }}"
+          docker build -f ./backend/Dockerfile -t registry.hub.docker.com/lukaspastva/${{ github.event.repository.name }}:backend-${GITHUB_SHA} ./backend
+          docker push registry.hub.docker.com/lukaspastva/${{ github.event.repository.name }}:backend-${GITHUB_SHA}
+
+          docker build -f ./frontend/Dockerfile -t registry.hub.docker.com/lukaspastva/${{ github.event.repository.name }}:frontend-${GITHUB_SHA} ./frontend
+          docker push registry.hub.docker.com/lukaspastva/${{ github.event.repository.name }}:frontend-${GITHUB_SHA}
