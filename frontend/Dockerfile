@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
+# Optionally, install react-router-dom if not in package.json
+RUN npm install react-router-dom
+
 # Copy the entire frontend code and build
 COPY . .
 RUN npm run build
